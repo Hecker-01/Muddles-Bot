@@ -19,6 +19,7 @@ require("dotenv").config();
 client.config = require("./config.json");
 client.events = new Collection();
 client.commands = new Collection();
+client.credit = new Array();
 
 loadEvents(client);
 
