@@ -1,5 +1,6 @@
 .env
 package-lock.json
+database.db
 /node_modules
 /TODO
 

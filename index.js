@@ -6,7 +6,7 @@ const {
 } = require("discord.js");
 const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
 const { User, Message, GuildMember, ThreadMember } = Partials;
-const dbConnection = require("./Database/db");
+const db = require("./Database/db");
 
 const client = new Client({
   intents: [Guilds, GuildMembers, GuildMessages],
@@ -21,7 +21,7 @@ client.config = require("./config.json");
 client.events = new Collection();
 client.commands = new Collection();
 client.credit = new Array();
-client.dbConnection = dbConnection;
+db.initialize();
 
 loadEvents(client);
 
