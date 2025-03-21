@@ -2,7 +2,8 @@
 package-lock.json
 database.db
 /node_modules
-/TODO
+/.idea
+/.vscode
 
 # MacOS specific files
 .DS_Store
