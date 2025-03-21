@@ -43,7 +43,6 @@ module.exports = {
           embeds: [Error],
           flags: MessageFlags.Ephemeral,
         });
-        return;
       } else {
         command.execute(interaction, client);
       }

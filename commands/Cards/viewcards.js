@@ -3,7 +3,6 @@ const {
   SlashCommandBuilder,
   Client,
 } = require("discord.js");
-const { getCards } = require("../../Functions/cardStuff");
 
 module.exports = {
   developer: true,

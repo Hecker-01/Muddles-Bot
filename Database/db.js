@@ -10,16 +10,28 @@ class Database {
 
   async initialize() {
     const queries = [
+      `CREATE TABLE IF NOT EXISTS cards (
+        cardID INTEGER PRIMARY KEY,
+        discordID TEXT NOT NULL,
+        rarity INTEGER NOT NULL
+      );`,
       `CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                email TEXT UNIQUE NOT NULL
-            )`,
-      `CREATE TABLE IF NOT EXISTS items (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                price REAL NOT NULL
-            )`,
+        userID TEXT PRIMARY KEY,
+        creditScore INTEGER NOT NULL
+      );`,
+      `CREATE TABLE IF NOT EXISTS user_cards (
+        userID TEXT NOT NULL,
+        cardID INTEGER NOT NULL,
+        PRIMARY KEY (userID, cardID),
+        FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE,
+        FOREIGN KEY (cardID) REFERENCES cards(cardID) ON DELETE CASCADE
+      );`,
+      `CREATE TABLE IF NOT EXISTS cooldowns (
+        userID TEXT PRIMARY KEY,
+        claim TIMESTAMP NOT NULL,
+        credit TIMESTAMP NOT NULL,
+        FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
+      );`,
     ];
     for (const query of queries) {
       await this.run(query);

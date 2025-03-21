@@ -4,7 +4,7 @@ async function loadEvents(client) {
   console.time("Events Loaded");
 
   client.events = new Map();
-  const events = new Array();
+  const events = [];
 
   const files = await loadFiles("Events");
 

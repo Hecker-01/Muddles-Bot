@@ -4,7 +4,7 @@ async function loadCommands(client) {
   console.time("Commands Loaded");
 
   client.commands = new Map();
-  const commands = new Array();
+  const commands = [];
 
   const files = await loadFiles("Commands");
 
@@ -14,8 +14,6 @@ async function loadCommands(client) {
       if (command.data && command.data.name && command.data.description) {
         client.commands.set(command.data.name, command);
         commands.push({ Command: command.data.name, Status: "✅" });
-      } else {
-        throw new Error("Invalid command data");
       }
     } catch (error) {
       console.error(`Error loading command ${file}:`, error);

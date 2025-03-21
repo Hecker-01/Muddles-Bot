@@ -14,6 +14,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("freakify")
     .setDescription("Make a user a FREAKY.")
+    .setContexts("Guild")
     .addStringOption((option) =>
       option
         .setName("short_name")
@@ -105,7 +106,8 @@ module.exports = {
         .setImage("attachment://freaky.png")
         .setColor(
           parseInt(client.config.defaultEmbedColor.replace(/^#/, "0x"), 16)
-        );
+        )
+        .setTimestamp();
 
       await interaction.followUp({
         content: `<@${interaction.user.id}>`,
