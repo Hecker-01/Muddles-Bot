@@ -1,11 +1,7 @@
 const {
   ChatInputCommandInteraction,
   EmbedBuilder,
-  ActionRowBuilder,
-  StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
-  ButtonBuilder,
-  ButtonStyle,
+  MessageFlags,
 } = require("discord.js");
 
 module.exports = {
@@ -23,7 +19,11 @@ module.exports = {
           )
           .setDescription("Please report this to <@766897363050037248>!")
           .setColor(0xff0000);
-        interaction.reply({ content: "", embeds: [Error], ephemeral: true });
+        interaction.reply({
+          content: "",
+          embeds: [Error],
+          flags: MessageFlags.Ephemeral,
+        });
         console.log(
           `\'${interaction.member.user.tag}\' caused an error! Errorcode: cmd-${interaction.commandName}`
         );
@@ -38,7 +38,11 @@ module.exports = {
             "If you think this is a mistake, please report this to <@766897363050037248>!"
           )
           .setColor(0xff0000);
-        interaction.reply({ content: "", embeds: [Error], ephemeral: true });
+        interaction.reply({
+          content: "",
+          embeds: [Error],
+          flags: MessageFlags.Ephemeral,
+        });
         return;
       } else {
         command.execute(interaction, client);
@@ -50,7 +54,11 @@ module.exports = {
         )
         .setDescription("Please report this to <@766897363050037248>!")
         .setColor(0xff0000);
-      interaction.reply({ content: "", embeds: [Error], ephemeral: true });
+      interaction.reply({
+        content: "",
+        embeds: [Error],
+        flags: MessageFlags.Ephemeral,
+      });
       console.log(
         `\'${interaction.member.user.tag}\' caused an error! Errorcode: btn-${interaction.customId}`
       );
@@ -61,7 +69,11 @@ module.exports = {
         )
         .setDescription("Please report this to <@766897363050037248>!")
         .setColor(0xff0000);
-      interaction.reply({ content: "", embeds: [Error], ephemeral: true });
+      interaction.reply({
+        content: "",
+        embeds: [Error],
+        flags: MessageFlags.Ephemeral,
+      });
       console.log(
         `\'${interaction.member.user.tag}\' caused an error! Errorcode: smnu-${interaction.customId}-[${interaction.values}]`
       );

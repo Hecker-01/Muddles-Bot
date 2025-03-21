@@ -33,11 +33,10 @@ module.exports = {
    * @param {Client} client
    */
   async execute(interaction, client) {
-    interaction.deferReply({ ephemeral: false });
+    interaction.deferReply();
     const cards = await getCards(client, interaction, interaction.user.id);
     interaction.reply({
       content: `Your cards:\n${cards.join("\n")}`,
-      ephemeral: false,
     });
 
     /*
@@ -148,7 +147,6 @@ module.exports = {
         content: "",
         embeds: [cards],
         components: [rarityActionRow],
-        ephemeral: false,
       });
     } else {
       const cards = new EmbedBuilder()

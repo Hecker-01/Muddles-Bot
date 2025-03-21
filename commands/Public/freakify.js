@@ -6,6 +6,7 @@ const {
   AttachmentBuilder,
   EmbedBuilder,
   Client,
+  MessageFlags,
 } = require("discord.js");
 
 module.exports = {
@@ -110,7 +111,6 @@ module.exports = {
         content: `<@${interaction.user.id}>`,
         files: [attachment],
         embeds: [Freaky],
-        ephemeral: false,
       });
     } catch (error) {
       console.error(error);
@@ -124,7 +124,7 @@ module.exports = {
         content: "",
         files: [],
         embeds: [Error],
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
   },

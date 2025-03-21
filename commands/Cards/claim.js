@@ -46,7 +46,7 @@ module.exports = {
     } else {
       soon.setDescription("Claiming cards is not available yet.");
     }
-    interaction.reply({ content: "", embeds: [soon], ephemeral: false });
+    interaction.reply({ content: "", embeds: [soon] });
   },
 };
 

@@ -22,6 +22,6 @@ module.exports = {
         parseInt(client.config.defaultEmbedColor.replace(/^#/, "0x"), 16)
       );
 
-    interaction.reply({ content: "", embeds: [invite], ephemeral: false });
+    interaction.reply({ content: "", embeds: [invite] });
   },
 };

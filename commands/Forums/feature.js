@@ -54,7 +54,6 @@ module.exports = {
       interaction.reply({
         content: "",
         embeds: [errorEmbed],
-        ephemeral: false,
       });
       return;
     }
@@ -126,7 +125,6 @@ module.exports = {
         interaction.reply({
           content: "",
           embeds: [errorEmbed],
-          ephemeral: false,
         });
         return;
       }
@@ -153,7 +151,7 @@ module.exports = {
         )
         .setDescription("Please report this to <@766897363050037248>!")
         .setColor(0xff0000);
-      interaction.reply({ content: "", embeds: [Error], ephemeral: false });
+      interaction.reply({ content: "", embeds: [Error] });
       console.log(
         `\'${interaction.member.user.tag}\' caused an error! Errorcode: cmd-${interaction.commandName}`
       );
@@ -166,7 +164,6 @@ module.exports = {
     interaction.reply({
       content: `${owner}, the status of your feature has been updated.`,
       embeds: [statusEmbed],
-      ephemeral: false,
     });
   },
 };

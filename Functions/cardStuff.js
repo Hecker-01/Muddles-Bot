@@ -14,13 +14,13 @@ module.exports = {
         console.error(err);
         return interaction.reply({
           content: "An error occurred while fetching your cards.",
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
       }
       if (queryResult.length === 0) {
         return interaction.reply({
           content: "You have no cards.",
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
       }
       result = queryResult;
@@ -41,7 +41,7 @@ module.exports = {
         console.error(err);
         return interaction.reply({
           content: "An error occurred while fetching your cards.",
-          ephemeral: true,
+          flags: MessageFlags.Ephemeral,
         });
       }
       if (queryResult.length === 0) {

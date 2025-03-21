@@ -30,7 +30,6 @@ module.exports = {
     interaction.reply({
       content: "",
       embeds: [ping],
-      ephemeral: false,
     });
   },
 };
