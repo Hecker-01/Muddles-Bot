@@ -51,7 +51,11 @@ module.exports = {
           "This command can only be run in <#1302356650522579065>."
         )
         .setColor(0xff0000);
-      interaction.reply({ content: "", embeds: [errorEmbed], ephemeral: true });
+      interaction.reply({
+        content: "",
+        embeds: [errorEmbed],
+        ephemeral: false,
+      });
       return;
     }
 
@@ -122,7 +126,7 @@ module.exports = {
         interaction.reply({
           content: "",
           embeds: [errorEmbed],
-          ephemeral: true,
+          ephemeral: false,
         });
         return;
       }
@@ -149,7 +153,7 @@ module.exports = {
         )
         .setDescription("Please report this to <@766897363050037248>!")
         .setColor(0xff0000);
-      interaction.reply({ content: "", embeds: [Error], ephemeral: true });
+      interaction.reply({ content: "", embeds: [Error], ephemeral: false });
       console.log(
         `\'${interaction.member.user.tag}\' caused an error! Errorcode: cmd-${interaction.commandName}`
       );
