@@ -8,9 +8,7 @@ module.exports = {
    */
   execute(client) {
     client.user.setPresence({
-      activities: [
-        { name: "over SCP: Site Mudkip", type: ActivityType.Watching },
-      ],
+      activities: [{ name: "over Site Mudkip", type: ActivityType.Watching }],
       status: "online",
     });
 

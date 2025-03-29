@@ -23,6 +23,7 @@ module.exports = {
           { name: "Denied", value: "denied" },
           { name: "Next version", value: "next_version" },
           { name: "Being worked on", value: "worked_on" },
+          { name: "Added", value: "added" },
           { name: "Done", value: "done" },
           { name: "Duplicate", value: "duplicate" },
           { name: "Needs work", value: "needs_work" }
@@ -30,7 +31,7 @@ module.exports = {
     )
     .addChannelOption((option) =>
       option
-        .setName("dupicate_feature")
+        .setName("duplicate_feature")
         .setDescription("Choose the post that this feature is a duplicate of.")
         .setRequired(false)
         .addChannelTypes(11)
@@ -112,7 +113,7 @@ module.exports = {
       forumPost.setLocked(true);
     } else if (status === "duplicate") {
       const duplicateFeature =
-        interaction.options.getChannel("dupicate_feature");
+        interaction.options.getChannel("duplicate_feature");
       if (!duplicateFeature) {
         const errorEmbed = new EmbedBuilder()
           .setTitle(
@@ -144,6 +145,16 @@ module.exports = {
         )
         .setColor(0x56b3dd);
       forumPost.setAppliedTags(["1302703587834728508"]);
+    } else if (status === "added") {
+      statusEmbed
+        .setTitle(
+          ":scroll: This feature has been added to the development board."
+        )
+        .setDescription(
+          "This feature has been added to the development board.\n\nYou can view the feature [here](https://discord.com/channels/1240767844648489010/1352596824480944178/1352596824480944178)."
+        )
+        .setColor(0x56b3dd);
+      forumPost.setAppliedTags(["1354791095078355164"]);
     } else {
       const Error = new EmbedBuilder()
         .setTitle(
