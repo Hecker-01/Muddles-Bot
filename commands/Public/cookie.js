@@ -33,11 +33,11 @@ module.exports = {
       );
     if (user) {
       cookieEmbed.setDescription(
-        `${interaction.user} thinks ${user} deserves a cookie, because they did such a good job!`
+        `${interaction.user} thinks ${user} deserves a cookie :thumbsup:`
       );
     } else {
       cookieEmbed.setDescription(
-        `${interaction.user} thinks you deserve a cookie :thumbsup:, because you did such a good job!`
+        `${interaction.user} thinks you deserve a cookie :thumbsup:`
       );
     }
 

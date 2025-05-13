@@ -48,99 +48,54 @@ module.exports = {
     if (message === "rules") {
       const rules1 = new EmbedBuilder()
         .setTitle("Server Rules")
-        .setColor("#FF5733")
+        .setColor(0x55b1dd)
         .setDescription(
-          "Please read the following rules to ensure a fun and respectful environment for everyone!"
-        )
-        .addFields(
-          {
-            name: "**1.** Discord's Terms of Service",
-            value:
-              "Make sure you're following [Discord's Terms of Service](https://discord.com/terms)!",
-          },
-          {
-            name: "**2.** PG-13 Usernames & Statuses",
-            value:
-              "Usernames and statuses must be PG-13 (SFW).",
-          },
-          {
-            name: "**3.** Keep It PG-13",
-            value:
-              "All messages should be PG-13! No NSFW content (links, images, videos), and please keep topics in their respective channels. Violating this will result in a 30-day ban.",
-          },
-          {
-            name: "**4.** Respect Everyone",
-            value:
-              "Treat others with respect—no toxicity, arguing, or bringing drama.",
-          },
-          {
-            name: "**5.** No Spam",
-            value:
-              "Spamming is a no-go! This includes emote spam, text walls, lyrics, caps, bot commands, and disrupting voice channels. Chain spamming is also prohibited.",
-          },
-          {
-            name: "**6.** No Impersonation",
-            value:
-              "Don't impersonate anyone, bots, content creators, staff, or other users.",
-          },
-          {
-            name: "**7.** No Unsolicited DMs",
-            value:
-              "Do not DM others without permission, and absolutely no advertising in DMs.",
-          },
-          {
-            name: "**8.** Beware of Suspicious Links",
-            value:
-              "Avoid clicking or sending suspicious/unknown links. Violating this rule will result in a 30-day timeout.",
-          },
-          {
-            name: "**9.** Staff Discretion",
-            value:
-              "Even if it's not explicitly mentioned in the rules, staff have the discretion to take action to maintain the server's well-being.",
-          },
-          {
-            name: "**10.** Reporting Issues",
-            value:
-              "Got an issue or need to report a user? Open a ticket in <#1330218316773458002> and keep it out of the chat channels!",
-          }
-        )
-        .setFooter({
-          text: "Thank you for helping us keep the vibes positive! 🙌",
-        });
+          `1. The Members of the community are to obey discords terms of service.
 
-      /*
-      const rules2 = new EmbedBuilder()
-        .setTitle(
-          "<:new1A:1331297377318863032><:new2A:1331297395451105310> **Warning System:**"
+2. The Member of the server will try to respect everyone and not start useless druma such as;
+  2(A)-Behaving toxic, arguing for no reason, bringing drama/starting it in the server.
+  2(B)-Participate in discriminatory behaviour of any kind such as racism, xenophobia, homophobia or any form of discrimination due to the persons upbringing, nationality, religion, place of birth, sexuality, identity or joke about such in an potentially offensive manner.
+  2(C)-Promote discriminatory behaviour it doesnt matter if its politics or anything this is not the space for that.
+
+3. People will not participate in NSFW Behavior and discuss it such as;
+   3(A)-Participate in sexting, suggestive conversations, gifs, images, post nsfw content, talk about nsfw content or behavior.
+   3(B)-Discuss, hint, joke on things like zoophilia, pedophilia or any other fetishes, suggestive content or text of such manner.
+   if you for some reason believe a server member is a pedophile don't discuss it in public channels and report it through the ticket system.
+   3(C)-Have NSFW profile pictures banners statuses or profiles.
+
+4. People will not joke about or continue to discuss after someone asks them to stop about sensitive topic that might trigger/make other members uncomftarble such as;
+   4(A) Recent or historical tragedies and events and people.
+   4(2) Suicide, self harm this includes "kys" , "go die" "die" " end it" and other phrases with the same intent.
+   4(3) Joking about ones disability or condition of any kind.
+
+5. The Server is a community thats strictly only English you may only participate in conversations using the english language or in channels designated for such if they are in place if not then you musn't talk in other languages no matter what.
+
+6. Do not impersonate other Members or staff no matter what.
+
+7. Do not spam, flood the channels, mic spam, reaction spam in any way.
+
+8. Do not advertise other communities or servers, social media of yours or any other stuff, you cant ask other member to follow you, send links and any other means to redirect people from the server to your social media or server in any text channel or vc channel.
+
+9. The Staff has the final say in any matter disagreeing with a staff member and arguing with them can be and will be punished if you have any issues towords a staff member file a HR-ticket.
+
+If nothing is done about messages older than one month, they will not be valid for punishment (unless the message is a serious offense)
+
+All rules apply to all text and vc channels within the server and must be followed at all times.`
         )
-        .setDescription(
-          "**2 Warns**: <:timeout:1331297927070748735> 30m timeout\n" +
-            "**3 Warns**: <:timeout:1331297927070748735> 30m timeout\n" +
-            "**4 Warns**: <:timeout:1331297927070748735> 30m timeout\n" +
-            "**5 Warns**: <:timeout:1331297927070748735> 1h timeout\n" +
-            "**6 Warns**: <:timeout:1331297927070748735> 6h timeout\n" +
-            "**7 Warns**: <:timeout:1331297927070748735> 12h timeout\n" +
-            "**8 Warns**: <:timeout:1331297927070748735> 1d timeout\n" +
-            "**9 Warns**: <:timeout:1331297927070748735> 28d timeout\n" +
-            "**10 Warns**: <:ban:1331297971966574682> Permanent ban"
-        )
-        .setColor(0xca0000)
         .setFooter({
-          text: "Warnings are given for server violations. Let's keep the vibes positive! 🙌",
+          text: "Thank you for helping us keep the server clean!",
         });
-      */
 
       const rules3 = new EmbedBuilder()
         .setTitle("**Other Info:**")
         .setDescription(
-          "Need help? Use </help:1331293998345617484> to get some general assistance!\n" +
-            "If that doesn't work, don't worry! Just head over to <#1330218316773458002> and open a ticket. Our team is here to help!"
+          "Need help? Use /help to get some general assistance!\nIf that doesn't work, don't worry! Just head over to <#1240770769462759576> and open a ticket. Our team is here to help!"
         )
         .setColor(0x7291ed)
         .setFooter({ text: "We're here to make your experience awesome!" });
 
       channel.send({
-        embeds: [rules1, rules2, rules3],
+        embeds: [rules1, rules3],
       });
       interaction.reply({
         content: "Rules sent!",
